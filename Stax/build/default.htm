@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+
+<SCRIPT FOR=GameController EVENT="OnDataReceived(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Data', Data);
+	FlashObj.SetVariable('Command', 'cmdReceiveData');
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+<SCRIPT FOR=GameController EVENT="OnNewGame(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Command', 'cmdNewGame');
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+<SCRIPT FOR=GameController EVENT="OnInitGame(Data)" LANGUAGE="JavaScript">
+  function getArg(varname) {
+	var str = Data;
+  
+	var MyArray=str.split('&');
+		for (var i = 0; i<MyArray.length; i++)
+			if(((MyArray[i]).split('='))[0] == varname)
+		      return unescape(((MyArray[i]).split('='))[1]); 		    
+		return "Unknown"; 
+  }
+    FlashObj.SetVariable('IsServer', getArg('IsServer'));
+    FlashObj.SetVariable('LocalNumber', getArg('LocalNo'));
+    FlashObj.SetVariable('ServerIdentifier', getArg('ServerNo'));
+    FlashObj.SetVariable('PlayersIdentifiersList', getArg('Players'));
+    FlashObj.SetVariable('PlayersDisplayNamesList', getArg('PlayersDspName'));
+    FlashObj.SetVariable('Preferences', getArg('Preference'));
+    FlashObj.SetVariable('Score', getArg('Score'));
+    FlashObj.SetVariable('sYourTurn', 'Your turn');
+    FlashObj.SetVariable('sPleaseWait', 'Please wait');
+    FlashObj.SetVariable('MLSXMLUrl', 'game_strings.mlsxml');
+    FlashObj.SetVariable('PlayersHandlesList', getArg('PlayersHandle'));
+    FlashObj.SetVariable('UIInitialLanguage', getArg('Language'));
+    FlashObj.SetVariable('Command', 'cmdInit');
+    FlashObj.GotoFrame(1);
+</SCRIPT>
+
+<SCRIPT FOR=GameController EVENT="OnSaveGame(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Command', 'cmdGetSaveData');
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+<SCRIPT FOR=GameController EVENT="OnLoadGame(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Data', Data);
+	FlashObj.SetVariable('Command', 'cmdLoadGame');
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+<SCRIPT FOR=GameController EVENT="OnPlayerReady(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Data', Data);
+	FlashObj.SetVariable('Command', 'cmdPlayerReady');
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+<SCRIPT FOR=GameController EVENT="OnClearScore(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Command', 'cmdClearScore');
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+<SCRIPT FOR=GameController EVENT="OnAddPlayer(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Data', Data);
+	FlashObj.SetVariable('Command', 'cmdAddPlayer');
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+
+<SCRIPT FOR=GameController EVENT="OnAddObserver(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Data', Data);
+//	FlashObj.SetVariable('Command', 'cmdAddObserver'); 
+//  DEBUG !!!!
+	FlashObj.SetVariable('Command', 'cmdAddPlayer'); 
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+
+<SCRIPT FOR=GameController EVENT="OnCancelAddPlayerQuery(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Data', Data);
+	FlashObj.SetVariable('Command', 'cmdCancelAddPlayerQuery');
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+<SCRIPT FOR=GameController EVENT="OnRemovePlayer(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Data', Data);
+	FlashObj.SetVariable('Command', 'cmdHostRemovePlayer');
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+<SCRIPT FOR=GameController EVENT="OnGetGameReplica(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Command', 'cmdGetGameReplica');
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+<SCRIPT FOR=GameController EVENT="OnApplyGameReplica(Data)" LANGUAGE="JavaScript">
+	FlashObj.SetVariable('Data', Data);
+	FlashObj.SetVariable('Command', 'cmdApplyGameReplica');
+	FlashObj.GotoFrame(1);
+</SCRIPT>
+
+<SCRIPT FOR=FlashObj EVENT="FSCommand(Command, Args)" LANGUAGE="JavaScript">
+   if (Command == "cmdSendData")
+	GameController.SendData(Args)
+   else if (Command == "cmdEndGame")
+	GameController.EndGame(Args)
+   else if (Command == "cmdSetGameData")
+	GameController.SaveGameData(Args)
+   else if (Command == "cmdSavePreference")
+	GameController.SavePreferences(Args)
+   else if (Command == "cmdGameRemovePlayer")
+        GameController.RemovePlayer(Args)
+   else if (Command == "cmdSendGameReplica")
+        GameController.SendGameReplica(Args)
+   else if (Command == "cmdCloseGame")
+        GameController.CloseGame(Args)
+   else if (Command == "cmdQueryAddPlayer")
+        GameController.QueryAddPlayer(Args)
+   else if (Command == "cmdStartSession")
+        GameController.PayPerViewSessionStarted(Args)
+   else if (Command == "cmdStopSession")
+        GameController.PayPerViewSessionFinished(Args)
+   else if (Command == "cmdGameLoaded")
+        GameController.ContainerReady(Args)
+</SCRIPT>
+<OBJECT id="GameController" width=0 height=0 classid="clsid:CA1073A2-5F3F-4445-8E5E-7109BDCEDDBE">
+</OBJECT>
+</HEAD>
+
+<BODY onLoad="" topmargin="0" leftmargin="0" marginwidth="0" marginleft="0">
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
+ WIDTH="100%" HEIGHT="100%" id="FlashObj">
+  <PARAM NAME=movie VALUE="stax_main.swf"> 
+  <PARAM NAME=quality VALUE=best> 
+  <PARAM NAME=bgcolor VALUE=#FFFFFF> 
+  <PARAM NAME="salign" value="lt" />
+  <PARAM NAME="scale" value="exactfit" />
+</OBJECT>
+</BODY>
+</HTML>

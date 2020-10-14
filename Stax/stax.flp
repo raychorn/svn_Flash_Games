@@ -1,0 +1,44 @@
+﻿<flash_project name="stax" vc_site="STAX" version="1">
+    <project_folder name="source" expanded="true">
+        <project_folder name="com.orange.utils" expanded="false">
+            <project_file path="./source/com/orange/utils/AnimClip_MC.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/Base_Button.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/Base_MovieClip.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/Base_Object.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/Debug.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/ExternalFunction.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/FrameManager.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/Generic_Button.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/Independent_Button.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/MoreMath.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/Phone.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/Resizer.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/SoundManager.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/StateMachine_MC.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/TrafficManager.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/URLManager.as" filetype="as" />
+            <project_file path="./source/com/orange/utils/XMLLoader.as" filetype="as" />
+        </project_folder>
+        <project_folder name="com.orange.skype.stax" expanded="true">
+            <project_file path="./source/com/orange/skype/stax/Main_MC.as" filetype="as" />
+            <project_file path="./source/com/orange/skype/stax/Game_MC.as" filetype="as" />
+            <project_file path="./source/com/orange/skype/stax/GridPiece_MC.as" filetype="as" />
+            <project_file path="./source/com/orange/skype/stax/Electricity_MC.as" filetype="as" />
+            <project_file path="./source/com/orange/skype/stax/StarField_MC.as" filetype="as" />
+        </project_folder>
+        <project_folder name="include" expanded="true">
+            <project_file path="./source/include/Skype_GameXN_API.as" filetype="as" />
+        </project_folder>
+        <project_file path="./source/stax_main.fla" filetype="fla" profile="" def_file="true" />
+    </project_folder>
+    <project_folder name="build" expanded="true">
+        <project_file path="./build/default.htm" filetype="htm" />
+        <project_file path="./build/icon16.png" filetype="png" />
+        <project_file path="./build/icon24.png" filetype="png" />
+        <project_file path="./build/icon32.png" filetype="png" />
+        <project_file path="./build/icon48.png" filetype="png" />
+        <project_file path="./build/stax_main.html" filetype="html" />
+        <project_file path="./build/thumb135x80.jpg" filetype="jpg" />
+        <project_file path="./build/more.jpg" filetype="jpg" />
+    </project_folder>
+</flash_project>
